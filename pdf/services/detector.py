@@ -21,6 +21,6 @@ def detectar_idioma_pdf(caminho_pdf):
     """
     texto = extrair_texto_pdf(caminho_pdf)
     if not texto:
-        return None, 0  # Nenhum texto encontrado
+        return None, 0 
     idioma, confianca = langid.classify(texto)
     return idioma, confianca

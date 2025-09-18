@@ -36,17 +36,15 @@ def processar_pdf_thread(nome_arquivo, caminho_original, idioma_destino):
     traduzido = traduzido.replace("\r", " ").replace("\n", " ")
     traduzido = traduzido.encode("utf-8", "ignore").decode("utf-8", "ignore")
 
-    # --- Caminho da fonte ---
+
     caminho_fonte = os.path.join(settings.BASE_DIR, "static", "fonts", "NotoSans-Regular.ttf")
 
     pdf = FPDF()
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
 
-    # >>> Registra a fonte TrueType
     pdf.add_font("NotoSans", "", caminho_fonte, uni=True)
 
-    # Usa a fonte registrada
     pdf.set_font("NotoSans", size=12)
     pdf.multi_cell(0, 8, traduzido, align="J")
 

@@ -5,12 +5,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'sua_chave_secreta_aqui'
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']  # Adicione seu domínio no deploy
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']  #
 
 # Apps instalados
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
-    'pdf',  # sua app
+    'pdf',  
 ]
 
 # Middlewares
@@ -51,6 +51,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-DEBUG = False
-ALLOWED_HOSTS = ["*"]   # ou mete o domínio gerado pelo Railway depois
+DEBUG = True
+ALLOWED_HOSTS = ["*"]   #
 STATIC_ROOT = BASE_DIR / "staticfiles"
