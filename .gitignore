@@ -1,18 +1,22 @@
-# Ambiente virtual
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.env
+
+# Virtual environment
 venv/
 ENV/
 env/
 
-# Banco de dados local
-db.sqlite3
-
-# Arquivos compilados do Python
-__pycache__/
-*.py[cod]
-
-# Arquivos de migração (se não quiseres)
+# Django
 *.log
+media/
+staticfiles/
 
-# Configurações do sistema
-.DS_Store
-Thumbs.db
+# IDEs
+.vscode/
+.idea/
+*.swp
