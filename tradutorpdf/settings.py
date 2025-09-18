@@ -5,9 +5,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Chave secreta e debug
-SECRET_KEY = 'murubijr'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'murubijr')
 DEBUG = False  # Em produção, trocar para False
-ALLOWED_HOSTS = ["*"]  # Em produção, colocar o domínio do deploy
+ALLOWED_HOSTS = ["goatelas-pdf-translator.onrender.com"]  # Em produção, colocar o domínio do deploy
 
 # Apps instalados
 INSTALLED_APPS = [
