@@ -6,20 +6,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Chave secreta e debug
 SECRET_KEY = os.environ.get('SECRET_KEY', 'murubijr')
-DEBUG = False  # Em produção, trocar para False
-ALLOWED_HOSTS = ["goatelas-pdf-translator.onrender.com"]  # Em produção, colocar o domínio do deploy
+DEBUG = False  # Em produção, deve ser False
+ALLOWED_HOSTS = ["goatelas-pdf-translator.onrender.com"]
 
 # Apps instalados
 INSTALLED_APPS = [
-    'django.contrib.staticfiles',  # Apenas apps essenciais
+    'django.contrib.staticfiles',  # Essencial para servir estáticos
     'pdf',  # Sua app principal
 ]
 
 # Middlewares
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # WhiteNoise para servir estáticos
     'django.middleware.common.CommonMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 # URLs principais
@@ -50,10 +50,12 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# Arquivos estáticos e media
+# Arquivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]  # Onde você mantém CSS/JS
+STATIC_ROOT = BASE_DIR / "staticfiles"    # Onde collectstatic vai colocar
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# Arquivos de mídia
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
