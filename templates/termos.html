@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - GoatelasPDFTranslator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6e6ff 100%);
+            min-height: 100vh;
+        }
+        .terms-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        .privacy-header {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .contact-form {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+        .form-input {
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .form-input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #6366f1;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4">
+    <div class="terms-container">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold privacy-header mb-4">Termos de Uso</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Ao utilizar o Goatelas PDF Translator, você concorda com os termos de uso abaixo.</p>
+        </div>
+
+        <!-- Terms Content -->
+        <!-- Terms Content -->
+<div class="grid md:grid-cols-1 gap-6 mb-12">
+    <div class="section-card flex items-start gap-4">
+        <i class="fas fa-check-circle text-indigo-600 text-2xl mt-1"></i>
+        <div>
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Uso do serviço</h2>
+            <p class="text-gray-700">O serviço deve ser utilizado apenas para fins legais e pessoais. É proibido enviar conteúdos ilegais, sensíveis ou que violem direitos de terceiros.</p>
+        </div>
+    </div>
+
+    <div class="section-card flex items-start gap-4">
+        <i class="fas fa-shield-alt text-indigo-600 text-2xl mt-1"></i>
+        <div>
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Responsabilidade</h2>
+            <p class="text-gray-700">O Goatelas PDF Translator não se responsabiliza por traduções imprecisas ou pelo uso indevido dos arquivos traduzidos.</p>
+        </div>
+    </div>
+
+    <div class="section-card flex items-start gap-4">
+        <i class="fas fa-pen-nib text-indigo-600 text-2xl mt-1"></i>
+        <div>
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Alterações</h2>
+            <p class="text-gray-700">Podemos atualizar estes termos a qualquer momento. Recomendamos revisar periodicamente.</p>
+        </div>
+    </div>
+</div>
+
+
+    
+        <!-- Footer -->
+        <div class="text-center mt-12 text-gray-500 text-sm">
+            <p>© 2023 Goatelas PDF Translator. Todos os direitos reservados.</p>
+            <p class="mt-2"><a href="/" class="text-indigo-600 hover:text-indigo-800">Voltar para a página inicial</a></p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+    </script>
+</body>
+</html>
